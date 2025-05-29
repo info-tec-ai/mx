@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO TEC Ai - Invest Smarter with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* A very light, almost white background */
+            color: #344754; /* Darker default text color for better contrast */
+        }
+        /* Custom gradient for buttons - slightly richer green */
+        .btn-gradient {
+            background-image: linear-gradient(to right, #0F766E, #10B981); /* A slightly darker to brighter green */
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+        }
+        .btn-gradient:hover {
+            background-image: linear-gradient(to right, #10B981, #0F766E); /* Reverse gradient on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); /* Stronger shadow on hover */
+        }
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3); /* Lighter border for spinner */
+            border-top: 4px solid #fff; /* White spinner line against dark background */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Custom styles for professional touch */
+        .section-padding {
+            padding-top: 6rem; /* Equivalent to py-24 */
+            padding-bottom: 6rem;
+        }
+        @media (min-width: 1024px) { /* Adjust padding for larger screens */
+            .section-padding {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* More pronounced, softer shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .text-gradient-green {
+            background: linear-gradient(to right, #0F766E, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Telegram logo SVG styling */
+        .telegram-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md py-4 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://placehold.co/48x48/e0e0e0/000000?text=AI" alt="INFO TEC Ai logo, representing artificial intelligence for investing" class="rounded-full shadow-sm">
+                <span class="text-2xl font-extrabold text-gray-900 tracking-tight">INFO TEC <span class="text-gradient-green">Ai</span></span>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#hero" class="text-gray-600 hover:text-green-700 font-medium transition duration-200">Home</a>
+
+<a href="#experience-stats" class="text-gray-600 hover:text-green-700 font-medium transition duration-200">Our Impact</a>
+                <a href="#ai-advantage" class="text-gray-600 hover:text-green-700 font-medium transition duration-200">AI Advantage</a>
+                <a href="#client-success-stories" class="text-gray-600 hover:text-green-700 font-medium transition duration-200">Success Stories</a>
+                <a href="#telegram-contact" class="text-gray-600 hover:text-green-700 font-medium transition duration-200">Connect</a>
+                <button id="registerHeaderBtn" class="btn-gradient text-white px-7 py-2.5 rounded-full font-semibold shadow-lg">
+                    Register
+                </button>
+            </nav>
+
+            <button class="md:hidden text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gradient-to-r from-green-600 to-green-800 py-16 sm:py-20 lg:py-24 text-white text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+                    INFO TRADERS <span class="text-yellow-300">REPRESENT AI</span>
+                </h2>
+                <p class="text-2xl sm:text-3xl font-medium">
+                    Experience Unprecedented Gains, Powered by AI.
+                </p>
+            </div>
+        </section>
+
+        <section id="hero" class="relative bg-white section-padding overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        <span class="text-gradient-green">INVEST</span> in Indian & Forex Markets<br class="hidden sm:inline"> with cutting-edge <span class="text-gradient-green">AI</span>
+                    </h1>
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-10 mx-auto lg:mx-0 max-w-lg">
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Maximize your returns by trading in global currencies and the dynamic Indian market. Our advanced AI makes it easy to grow your earnings online, whether you're a seasoned investor or just starting out.
+                        </p>
+                    </div>
+                    <button id="getStartedBtn" class="btn-gradient text-white px-9 py-3.5 rounded-full font-semibold shadow-xl flex items-center justify-center mx-auto lg:mx-0 w-max">
+                        Get Started Now
+                        <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </button>
+
+                    <div id="success-stories-trigger" class="pt-12 pb-6 text-center mx-auto lg:mx-0 max-w-lg">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4">
+                            Ready to See Our <span class="text-gradient-green">Client Success Stories?</span>
+                        </h2>
+                        <p class="text-lg text-gray-700 mb-6">
+
+Discover how real people are achieving their financial goals with INFO TEC Ai.
+                        </p>
+                        <button id="showSuccessStoriesBtn" class="btn-gradient text-white px-9 py-3.5 rounded-full font-semibold shadow-xl flex items-center justify-center mx-auto w-max">
+                            See Our Success Stories & Results
+                            <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    </div>
+
+                <div class="lg:w-1/2 flex flex-col justify-center lg:justify-end p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-200 relative">
+                    <div class="absolute top-4 right-4 text-green-600">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M6.364 6.364l-.707-.707M12 20v1m-6.364-1.636l-.707.707M18.364 5.636l.707-.707M12 14c-1.657 0-3-1.343-3-3V5a3 3 0 116 0v6c0 1.657-1.343 3-3 3z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 text-center lg:text-left">
+                        Unlock <span class="text-gradient-green">AI-Powered Financial Growth</span>
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Our cutting-edge AI software thinks like a seasoned financial analyst, scanning Indian and global forex markets 24/7. It leverages advanced machine learning to predict market movements with remarkable accuracy, identifying prime opportunities.
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                This intelligent automation removes emotional stress and time commitment, managing risk with precision and executing trades at optimal moments. Build a smarter, more secure financial future with consistent, data-driven returns.
+                            </p>
+                        </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <p class="font-semibold text-green-700 text-lg leading-relaxed">
+                                Experience the future of investing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience-stats" class="bg-gray-50 section-padding">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12">
+                    Our <span class="text-gradient-green">Proven Impact</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-white p-10 rounded-xl card-shadow flex flex-col items-center justify-center">
+                        <p class="text-7xl font-extrabold text-gradient-green mb-4">10+</p>
+                        <p class="text-2xl font-semibold text-gray-700">Years Trading Experience</p>
+                    </div>
+
+<div class="bg-white p-10 rounded-xl card-shadow flex flex-col items-center justify-center">
+                        <p class="text-7xl font-extrabold text-gradient-green mb-4">25K+</p>
+                        <p class="text-2xl font-semibold text-gray-700">Satisfied Customers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registration-section" class="bg-white section-padding hidden">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-8">
+                    Start Your <span class="text-gradient-green">AI-Powered Journey</span>
+                </h2>
+                <p class="text-xl text-gray-700 mb-10">
+                    Fill out the form below to get started with INFO TEC Ai and unlock your financial potential.
+                </p>
+                <div class="bg-gray-50 p-8 rounded-xl card-shadow border-l-4 border-green-500 text-left">
+                    <form id="registrationForm" class="space-y-6">
+                        <div>
+                            <label for="full-name" class="block text-lg font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="full-name" name="full_name" placeholder="John Doe" required
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-lg">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-lg">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-lg font-medium text-gray-700 mb-2">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone_number" placeholder="+91 98765 43210"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-lg">
+                        </div>
+                        <div>
+                            <label for="investment-interest" class="block text-lg font-medium text-gray-700 mb-2">Investment Interest</label>
+                            <select id="investment-interest" name="investment_interest"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-lg">
+                                <option value="">Select an option</option>
+                                <option value="indian-market">Indian Market</option>
+                                <option value="forex-market">Forex Market</option>
+                                <option value="both">Both Indian & Forex</option>
+                                <option value="learn-more">Just learning more</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submitRegistrationBtn" class="btn-gradient text-white px-9 py-3.5 rounded-full font-semibold shadow-xl w-full mt-6">
+                            Submit Registration
+                            <span id="formLoadingSpinner" class="loading-spinner hidden"></span>
+                        </button>
+                    </form>
+                    <div id="formMessage" class="mt-4 text-center text-lg font-medium hidden"></div>
+
+</div>
+            </div>
+        </section>
+        <section id="ai-advantage" class="bg-gray-100 section-padding">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12">
+                    Why AI is Your <span class="text-gradient-green">Ultimate Trading Advantage</span>
+                </h2>
+                <p class="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
+                    While human intuition has its place, AI brings unparalleled capabilities to the financial markets, overcoming limitations that often hinder traditional trading. Discover how our AI empowers you.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4" role="img" aria-label="Speed icon">⚡</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Instantaneous Data Analysis</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Humans can analyze only a fraction of market data. Our AI processes billions of data points, news feeds, and economic indicators in milliseconds, identifying opportunities and risks with a speed no human can match.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4" role="img" aria-label="Robot icon">🤖</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Emotion-Free Decisions</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Fear, greed, and bias often lead to poor trading choices. Our AI operates purely on logic and data, executing trades with unwavering discipline, ensuring optimal decisions even during extreme market volatility.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4" role="img" aria-label="Clock icon">⏰</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Continuous Market Surveillance</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Financial markets never sleep, but humans need rest. Our AI continuously monitors global and Indian markets 24/7, ensuring no profitable opportunity is missed, regardless of time zones or trading hours.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4" role="img" aria-label="Magnifying glass icon">🔍</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Sophisticated Pattern Detection</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            AI algorithms can identify complex, multi-variable patterns and correlations in market data that are too subtle or vast for human perception, leading to more accurate predictions and strategic entries/exits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="client-success-stories" class="section-padding bg-gray-50 hidden">
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12">
+                    Hear From Our <span class="text-gradient-green">Delighted Clients</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=P" alt="Portrait of Priya Sharma, a satisfied client" class="rounded-full mb-4 shadow-md">
+                        <p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "INFO TEC Ai has completely transformed my investment journey! My portfolio has seen consistent growth, and I finally feel confident about my financial future. Truly a game-changer for both Indian and Forex markets!"
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Priya Sharma, Mumbai</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=R" alt="Portrait of Rajesh Kumar, a satisfied client" class="rounded-full mb-4 shadow-md">
+                        <p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "As a busy professional, I needed an investment solution that was smart and hands-off. INFO TEC Ai delivered beyond my expectations. The ability to trade with one intelligent platform is revolutionary. The profits speak for themselves!"
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Rajesh Kumar, Bengaluru</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=S" alt="Portrait of Sarah Khan, a satisfied client" class="rounded-full mb-4 shadow-md">
+                        <p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "I was skeptical at first, but INFO TEC Ai proved me wrong. The AI's ability to adapt to market changes and identify lucrative opportunities is astounding. It's simplified my investing and brought me returns I never thought possible."
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Sarah Khan, Delhi</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=A" alt="Portrait of Amit Singh, a satisfied client" class="rounded-full mb-4 shadow-md">
+                        <p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "The precision of INFO TEC Ai's predictions is truly remarkable. I've seen consistent positive results in my forex trades, which has significantly boosted my confidence and portfolio. Highly recommended for serious traders!"
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Amit Singh, Chennai</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=L" alt="Portrait of Lakshmi Devi, a satisfied client" class="rounded-full mb-4 shadow-md">
+
+<p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "I'm relatively new to investing, and INFO TEC Ai has been an absolute blessing. It simplifies complex market analysis and provides clear, actionable insights. My initial investment has grown steadily, and I'm thrilled!"
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Lakshmi Devi, Hyderabad</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 flex flex-col items-center text-center">
+                        <img src="https://placehold.co/64x64/e0e0e0/000000?text=V" alt="Portrait of Vikram Reddy, a satisfied client" class="rounded-full mb-4 shadow-md">
+                        <p class="text-xl italic text-gray-800 mb-6 leading-relaxed">
+                            "The automated trading capabilities are a game-changer. I can focus on my work knowing that INFO TEC Ai is diligently managing my investments, minimizing risk and maximizing returns. A truly intelligent solution!"
+                        </p>
+                        <p class="text-lg font-semibold text-gray-700">- Vikram Reddy, Pune</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-100 section-padding">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-12">
+                    Get Instant <span class="text-gradient-green">AI-Powered Insights ✨</span>
+                </h2>
+                <p class="text-xl text-gray-700 mb-10">
+                    Tap into our AI's intelligence for quick market overviews or personalized investment tips.
+                </p>
+                <button id="generateInsightBtn" class="btn-gradient text-white px-9 py-3.5 rounded-full font-semibold shadow-xl flex items-center justify-center mx-auto w-max">
+                    Generate Insight ✨
+                    <span id="loadingSpinner" class="loading-spinner hidden"></span>
+                </button>
+                <div id="insightOutput" class="mt-16 bg-white p-8 rounded-xl card-shadow border-l-4 border-green-500 text-left text-gray-800 text-lg italic hidden">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="telegram-contact" class="bg-gray-900 text-white py-12 text-center section-padding">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl sm:text-5xl font-extrabold mb-8">
+                Connect with Us <span class="text-green-400">Instantly!</span>
+            </h2>
+            <p class="text-lg mb-8">
+                Join our vibrant community on Telegram for real-time updates, exclusive insights, and direct support.
+            </p>
+            <a href="https://t.me/banknifty_0118" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 shadow-lg transform hover:scale-105">
+                <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.88 7.78L9.5 15.17c-.2.13-.45.16-.68.08-.23-.08-.4-.25-.48-.49l-.75-2.25c-.08-.24-.05-.5.08-.7l4.3-3.08c.17-.12.4-.1.55.05.15.15.16.38.03.55l-3.6 2.58.5 1.5c.08.24.25.4.49.49.24.08.5-.05.7-.08l5.38-3.52c.17-.12.2-.35.08-.52-.12-.17-.35-.2-.52-.08z"/>
+                </svg>
+                Join Our Telegram Channel
+            </a>
+            <p class="text-gray-400 mt-12">&copy; 2025 INFO TEC Ai. All rights reserved.</p>
+        </div>
+    </section>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const getStartedBtn = document.getElementById('getStartedBtn');
+            const registerHeaderBtn = document.getElementById('registerHeaderBtn');
+            const registrationSection = document.getElementById('registration-section');
+            const registrationForm = document.getElementById('registrationForm');
+            const submitRegistrationBtn = document.getElementById('submitRegistrationBtn');
+            const formLoadingSpinner = document.getElementById('formLoadingSpinner');
+            const formMessage = document.getElementById('formMessage');
+
+            const generateInsightBtn = document.getElementById('generateInsightBtn');
+            const insightOutput = document.getElementById('insightOutput');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            const showSuccessStoriesBtn = document.getElementById('showSuccessStoriesBtn');
+            const clientSuccessStoriesSection = document.getElementById('client-success-stories');
+
+            const mobileMenuButton = document.querySelector('header button.md\\:hidden');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    console.log("Mobile menu button clicked. Implement actual mobile menu toggle functionality.");
+                });
+            }
+
+            const showRegistration = () => {
+                // Added null check for registrationSection
+                if (registrationSection) {
+                    registrationSection.classList.remove('hidden');
+                    registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    console.error("Error: Registration section element was not found. Cannot display form.");
+                }
+            };
+
+            if (getStartedBtn) {
+                getStartedBtn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    showRegistration();
+                });
+            }
+            if (registerHeaderBtn) {
+                registerHeaderBtn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    showRegistration();
+                });
+            }
+
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    formLoadingSpinner.classList.remove('hidden');
+                    submitRegistrationBtn.disabled = true;
+                    formMessage.classList.add('hidden'); // Hide previous messages
+
+                    const formData = new FormData(registrationForm);
+                    const data = {};
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+
+                    // Formspree endpoint
+                    const formActionUrl = "https://formspree.io/f/mrbkzgzl"; 
+
+                    try {
+                        const response = await fetch(formActionUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        if (response.ok) {
+                            // Clear the form
+                            registrationForm.reset();
+                            // Hide the form and show the success message with Telegram link
+                            registrationForm.classList.add('hidden');
+
+formMessage.classList.remove('hidden');
+                            formMessage.classList.remove('text-red-600');
+                            formMessage.classList.add('text-green-600');
+                            formMessage.innerHTML = 
+                                <p class="mb-4">Thank you for registering! We'll be in touch soon.</p>
+                                <p class="text-xl font-semibold mb-4">Connect with us:</p>
+                                <a href="https://t.me/banknifty_0118" target="_blank" rel="noopener noreferrer" 
+                                   class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg">
+                                    <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.88 7.78L9.5 15.17c-.2.13-.45.16-.68.08-.23-.08-.4-.25-.48-.49l-.75-2.25c-.08-.24-.05-.5.08-.7l4.3-3.08c.17-.12.4-.1.55.05.15.15.16.38.03.55l-3.6 2.58.5 1.5c.08.24.25.4.49.49.24.08.5-.05.7-.08l5.38-3.52c.17-.12.2-.35.08-.52-.12-.17-.35-.2-.52-.08z"/>
+                                    </svg>
+                                    Join our Telegram Channel
+                                </a>
+                            ;
+
+                        } else {
+                            const errorData = await response.json();
+                            formMessage.textContent = Registration failed: ${errorData.errors ? errorData.errors.map(e => e.message).join(', ') : 'Please try again.'};
+                            formMessage.classList.remove('hidden');
+                            formMessage.classList.remove('text-green-600');
+                            formMessage.classList.add('text-red-600');
+                            console.error("Form submission error:", errorData);
+                        }
+                    } catch (error) {
+                        formMessage.textContent = "An error occurred during submission. Please check your internet connection.";
+                        formMessage.classList.remove('hidden');
+                        formMessage.classList.remove('text-green-600');
+                        formMessage.classList.add('text-red-600');
+                        console.error("Network or fetch error:", error);
+                    } finally {
+                        loadingSpinner.classList.add('hidden');
+                        generateInsightBtn.disabled = false;
+                    }
+                });
+            }
+
+            // Client Success Stories button handler
+            if (showSuccessStoriesBtn && clientSuccessStoriesSection) {
+                showSuccessStoriesBtn.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default link behavior if it were a link
+                    clientSuccessStoriesSection.classList.remove('hidden'); // Show the section
+                    showSuccessStoriesBtn.classList.add('hidden'); // Hide the button after click
+                    clientSuccessStoriesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
